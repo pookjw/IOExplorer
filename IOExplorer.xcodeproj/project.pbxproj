@@ -21,6 +21,7 @@
 		4FD442462A2E262100B5443C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F04C67B2A2CC8FB0003C760 /* IOKit.framework */; };
 		4FD442472A2E262500B5443C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F04C6792A2CC8F70003C760 /* AppKit.framework */; };
 		4FD4424A2A2E2E6400B5443C /* SummariesViewModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FD442492A2E2E6400B5443C /* SummariesViewModel.mm */; };
+		4FD4424D2A2E3CB700B5443C /* DetailViewModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4424C2A2E3CB700B5443C /* DetailViewModel.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		4FD442442A2E259200B5443C /* SummaryNodeObject.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummaryNodeObject.mm; sourceTree = "<group>"; };
 		4FD442482A2E2E6400B5443C /* SummariesViewModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SummariesViewModel.hpp; sourceTree = "<group>"; };
 		4FD442492A2E2E6400B5443C /* SummariesViewModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummariesViewModel.mm; sourceTree = "<group>"; };
+		4FD4424B2A2E3CB700B5443C /* DetailViewModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DetailViewModel.hpp; sourceTree = "<group>"; };
+		4FD4424C2A2E3CB700B5443C /* DetailViewModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DetailViewModel.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 			children = (
 				4F04C7182A2D87ED0003C760 /* DetailViewController.hpp */,
 				4F04C7192A2D87ED0003C760 /* DetailViewController.mm */,
+				4FD4424B2A2E3CB700B5443C /* DetailViewModel.hpp */,
+				4FD4424C2A2E3CB700B5443C /* DetailViewModel.mm */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				4FD4423F2A2DE90700B5443C /* IOKitWrapper.cpp in Sources */,
 				4FD442352A2DD9B700B5443C /* SummaryTableCellView.mm in Sources */,
 				4FD442452A2E259200B5443C /* SummaryNodeObject.mm in Sources */,
+				4FD4424D2A2E3CB700B5443C /* DetailViewModel.mm in Sources */,
 				4FD442422A2E21B300B5443C /* SummaryNode.cpp in Sources */,
 				4F04C7172A2D86FD0003C760 /* SummariesViewController.mm in Sources */,
 				4F04C7112A2D83250003C760 /* MainSplitViewController.mm in Sources */,

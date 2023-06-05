@@ -9,6 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSNotificationName const NSNotificationNameSummariesViewControllerSelectionDidChangeIOObject = @"NSNotificationNameSummariesViewControllerSelectionDidChangeIOObject";
+static NSString * const SummariesViewControllerIOObjectKey = @"SummariesViewControllerIOObjectKey";
+
 @interface SummariesViewController : NSViewController
 
 @end

@@ -17,7 +17,6 @@
 @property (retain) NSScrollView *scrollView;
 @property (retain) NSOutlineView *outlineView;
 @property (assign) std::shared_ptr<SummariesViewModel> viewModel;
-@property NSArray *content;
 @end
 
 @implementation SummariesViewController
@@ -96,6 +95,21 @@
     view.textField.stringValue = representedObject.title;
     
     return view;
+}
+
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification {
+    SummaryNodeObject * _Nullable selectedNodeObject = self.viewModel.get()->treeController().selectedObjects.firstObject;
+    
+    NSNumber * __autoreleasing ioObject;
+    if (selectedNodeObject) {
+        ioObject = @(selectedNodeObject.summaryNodeRef.get()->ioObject());
+    } else {
+        ioObject = @(IO_OBJECT_NULL);
+    }
+    
+    [NSNotificationCenter.defaultCenter postNotificationName:NSNotificationNameSummariesViewControllerSelectionDidChangeIOObject
+                                                      object:self
+                                                    userInfo:@{SummariesViewControllerIOObjectKey: ioObject}];
 }
 
 #pragma mark - NSOutlineViewDataSource

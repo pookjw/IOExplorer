@@ -25,13 +25,7 @@ std::string SummaryNode::title() {
 }
 
 std::string SummaryNode::systemImageName() {
-    if (_ioObject == IO_OBJECT_NULL) {
-        return "questionmark";
-    }
-    
-    CFStringRef classNameRef = IOObjectCopyClass(_ioObject);
-    
-    if (CFStringCompare(classNameRef, CFSTR(kIOUSBHostDeviceClassName), 0) == kCFCompareEqualTo) {
+    if (IOObjectConformsTo(_ioObject, kIOUSBHostDeviceClassName)) {
         return "heart";
     } else {
         return "questionmark";

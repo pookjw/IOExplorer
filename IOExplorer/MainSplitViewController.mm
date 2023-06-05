@@ -17,6 +17,7 @@
 @implementation MainSplitViewController
 
 - (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self name:NSNotificationNameSummariesViewControllerSelectionDidChangeIOObject object:_summariesViewController];
     [_summariesViewController release];
     [_detailViewController release];
     [super dealloc];
@@ -26,6 +27,7 @@
     [super viewDidLoad];
     [self setupSummariesViewController];
     [self setupDetailViewController];
+    [self addObservers];
 }
 
 - (void)setupSummariesViewController {
@@ -42,6 +44,21 @@
     [self addSplitViewItem:splitViewItem];
     self.detailViewController = detailViewController;
     [detailViewController release];
+}
+
+- (void)addObservers {
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(summariesViewControllerIOObjectSelectionDidChange:)
+                                               name:NSNotificationNameSummariesViewControllerSelectionDidChangeIOObject
+                                             object:self.summariesViewController];
+}
+
+- (void)summariesViewControllerIOObjectSelectionDidChange:(NSNotification *)notification {
+    NSNumber * _Nullable ioObjectNumber = notification.userInfo[SummariesViewControllerIOObjectKey];
+    if (ioObjectNumber == nil) return;
+    
+    io_object_t ioObject = ioObjectNumber.unsignedIntValue;
+    self.detailViewController.ioObject = ioObject;
 }
 
 @end
