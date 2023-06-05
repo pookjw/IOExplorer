@@ -12,12 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 class DetailViewModel {
 public:
-    io_object_t ioObject();
     void setIOObject(io_object_t ioObject);
     DetailViewModel();
     ~DetailViewModel();
 private:
     io_object_t _ioObject;
+    NSOperationQueue *_queue;
+    void setupQueue();
 };
 
 NS_ASSUME_NONNULL_END

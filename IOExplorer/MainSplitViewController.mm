@@ -58,7 +58,7 @@
     if (ioObjectNumber == nil) return;
     
     io_object_t ioObject = ioObjectNumber.unsignedIntValue;
-    self.detailViewController.ioObject = ioObject;
+    [self.detailViewController setIOObject:ioObject];
 }
 
 @end

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailViewController : NSViewController
-@property (assign, nonatomic) io_object_t ioObject;
+- (void)setIOObject:(io_object_t)ioObject;
 @end
 
 NS_ASSUME_NONNULL_END

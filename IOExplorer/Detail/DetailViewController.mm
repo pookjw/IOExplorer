@@ -27,11 +27,7 @@
     [super dealloc];
 }
 
-- (io_object_t)ioObject {
-    return self.viewModel.get()->ioObject();
-}
-
-- (void)setIoObject:(io_object_t)ioObject {
+- (void)setIOObject:(io_object_t)ioObject {
     self.viewModel.get()->setIOObject(ioObject);
 }
 

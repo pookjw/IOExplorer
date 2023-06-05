@@ -50,7 +50,7 @@ void SummariesViewModel::setupTreeController() {
 
 void SummariesViewModel::setupQueue() {
     NSOperationQueue *queue = [NSOperationQueue new];
-    queue.qualityOfService = NSQualityOfServiceBackground;
+    queue.qualityOfService = NSQualityOfServiceUserInitiated;
     _queue = [queue retain];
     [queue release];
 }
