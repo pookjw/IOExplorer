@@ -12,9 +12,10 @@ std::unordered_set<io_object_t> IOKitWrapper::usb::allObjects() {
     IOMainPort(MACH_PORT_NULL, &mainPort);
     
     io_iterator_t iterator = IO_OBJECT_NULL;
-    CFMutableDictionaryRef matchingDict = IOServiceMatching(kIOUSBDeviceClassName);
+    CFMutableDictionaryRef matchingDict = IOServiceMatching(kIOUSBHostDeviceClassName);
     kern_return_t result = IOServiceGetMatchingServices(mainPort, matchingDict, &iterator);
     assert(result == KERN_SUCCESS);
+    assert(IOIteratorIsValid(iterator));
     
     std::unordered_set<io_object_t> results;
     io_object_t usbCurrentObject = IO_OBJECT_NULL;

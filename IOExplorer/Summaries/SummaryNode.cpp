@@ -6,8 +6,9 @@
 //
 
 #import "SummaryNode.hpp"
+#import <IOKit/usb/IOUSBLib.h>
 
-SummaryNode::SummaryNode(io_object_t ioObject, std::string title, std::vector<std::shared_ptr<SummaryNode>> children, SummaryNode::NodeType nodeType) : _ioObject(ioObject), _title(title), _children(children), _nodeType(nodeType) {
+SummaryNode::SummaryNode(io_object_t ioObject, std::string title, std::vector<std::shared_ptr<SummaryNode>> children) : _ioObject(ioObject), _title(title), _children(children) {
     IOObjectRetain(ioObject);
 }
 
@@ -24,13 +25,16 @@ std::string SummaryNode::title() {
 }
 
 std::string SummaryNode::systemImageName() {
-    switch (_nodeType) {
-        case SummaryNode::NodeType::USBRootType:
-            return "heart.fill";
-        case SummaryNode::NodeType::USBType:
-            return "heart";
-        default:
-            return "questionmark";
+    if (_ioObject == IO_OBJECT_NULL) {
+        return "questionmark";
+    }
+    
+    CFStringRef classNameRef = IOObjectCopyClass(_ioObject);
+    
+    if (CFStringCompare(classNameRef, CFSTR(kIOUSBHostDeviceClassName), 0) == kCFCompareEqualTo) {
+        return "heart";
+    } else {
+        return "questionmark";
     }
 }
 
@@ -42,11 +46,7 @@ bool SummaryNode::isLeaf() {
     return _children.empty();
 }
 
-SummaryNode::NodeType SummaryNode::nodeType() {
-    return _nodeType;
-}
-
-SummaryNode::SummaryNode(const SummaryNode& other) : _ioObject(other._ioObject), _title(other._title), _children(other._children), _nodeType(other._nodeType) {
+SummaryNode::SummaryNode(const SummaryNode& other) : _ioObject(other._ioObject), _title(other._title), _children(other._children) {
     IOObjectRetain(_ioObject);
 }
 
@@ -55,7 +55,6 @@ SummaryNode& SummaryNode::operator=(const SummaryNode &other) {
         _ioObject = other._ioObject;
         _title = other._title;
         _children = other._children;
-        _nodeType = other._nodeType;
         IOObjectRetain(_ioObject);
     }
     
