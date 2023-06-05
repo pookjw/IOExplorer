@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  MainSplitViewController.hpp
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/5/23.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailViewController : NSViewController
+@interface MainSplitViewController : NSSplitViewController
 
 @end
 

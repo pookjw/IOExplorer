@@ -1,5 +1,5 @@
 //
-//  SummaryTableCellView.h
+//  SummaryTableCellView.hpp
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/5/23.

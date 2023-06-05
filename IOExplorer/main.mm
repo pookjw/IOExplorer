@@ -1,12 +1,12 @@
 //
-//  main.m
+//  main.mm
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/4/23.
 //
 
 #import <Cocoa/Cocoa.h>
-#import "AppDelegate.h"
+#import "AppDelegate.hpp"
 
 int main(int argc, const char * argv[]) {
     AppDelegate *delegate = [AppDelegate new];

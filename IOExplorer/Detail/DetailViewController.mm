@@ -1,11 +1,11 @@
 //
-//  DetailViewController.m
+//  DetailViewController.mm
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/5/23.
 //
 
-#import "DetailViewController.h"
+#import "DetailViewController.hpp"
 
 @interface DetailViewController ()
 

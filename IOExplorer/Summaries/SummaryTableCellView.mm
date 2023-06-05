@@ -1,11 +1,11 @@
 //
-//  SummaryTableCellView.m
+//  SummaryTableCellView.mm
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/5/23.
 //
 
-#import "SummaryTableCellView.h"
+#import "SummaryTableCellView.hpp"
 
 @implementation SummaryTableCellView
 

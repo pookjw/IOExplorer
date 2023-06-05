@@ -1,12 +1,12 @@
 //
-//  AppDelegate.m
+//  AppDelegate.mm
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/4/23.
 //
 
-#import "AppDelegate.h"
-#import "MainSplitViewController.h"
+#import "AppDelegate.hpp"
+#import "MainSplitViewController.hpp"
 
 @interface AppDelegate ()
 @end

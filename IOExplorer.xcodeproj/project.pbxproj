@@ -7,43 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F04C66A2A2CC8BF0003C760 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C6692A2CC8BF0003C760 /* AppDelegate.m */; };
+		4F04C66A2A2CC8BF0003C760 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C6692A2CC8BF0003C760 /* AppDelegate.mm */; };
 		4F04C66C2A2CC8C00003C760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F04C66B2A2CC8C00003C760 /* Assets.xcassets */; };
-		4F04C6712A2CC8C00003C760 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C6702A2CC8C00003C760 /* main.m */; };
-		4F04C7112A2D83250003C760 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C7102A2D83250003C760 /* MainSplitViewController.m */; };
-		4F04C7172A2D86FD0003C760 /* SummariesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C7162A2D86FD0003C760 /* SummariesViewController.m */; };
-		4F04C71A2A2D87ED0003C760 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C7192A2D87ED0003C760 /* DetailViewController.m */; };
-		4F04C71D2A2D945F0003C760 /* SummaryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C71C2A2D945F0003C760 /* SummaryNode.m */; };
-		4F04C7212A2D94780003C760 /* SummariesViewModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C7202A2D94780003C760 /* SummariesViewModel.mm */; };
-		4FD442352A2DD9B700B5443C /* SummaryTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD442342A2DD9B700B5443C /* SummaryTableCellView.m */; };
+		4F04C6712A2CC8C00003C760 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C6702A2CC8C00003C760 /* main.mm */; };
+		4F04C7112A2D83250003C760 /* MainSplitViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C7102A2D83250003C760 /* MainSplitViewController.mm */; };
+		4F04C7172A2D86FD0003C760 /* SummariesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C7162A2D86FD0003C760 /* SummariesViewController.mm */; };
+		4F04C71A2A2D87ED0003C760 /* DetailViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C7192A2D87ED0003C760 /* DetailViewController.mm */; };
+		4FD442352A2DD9B700B5443C /* SummaryTableCellView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FD442342A2DD9B700B5443C /* SummaryTableCellView.mm */; };
 		4FD442372A2DD9C100B5443C /* SummaryTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD442362A2DD9C100B5443C /* SummaryTableCellView.xib */; };
-		4FD4423B2A2DE2A700B5443C /* SummaryNodeFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FD442392A2DE2A700B5443C /* SummaryNodeFactory.mm */; };
+		4FD4423F2A2DE90700B5443C /* IOKitWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4423D2A2DE90700B5443C /* IOKitWrapper.cpp */; };
+		4FD442422A2E21B300B5443C /* SummaryNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD442402A2E21B300B5443C /* SummaryNode.cpp */; };
+		4FD442452A2E259200B5443C /* SummaryNodeObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FD442442A2E259200B5443C /* SummaryNodeObject.mm */; };
+		4FD442462A2E262100B5443C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F04C67B2A2CC8FB0003C760 /* IOKit.framework */; };
+		4FD442472A2E262500B5443C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F04C6792A2CC8F70003C760 /* AppKit.framework */; };
+		4FD4424A2A2E2E6400B5443C /* SummariesViewModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FD442492A2E2E6400B5443C /* SummariesViewModel.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F04C6652A2CC8BF0003C760 /* IOExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F04C6682A2CC8BF0003C760 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4F04C6692A2CC8BF0003C760 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4F04C6682A2CC8BF0003C760 /* AppDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AppDelegate.hpp; sourceTree = "<group>"; };
+		4F04C6692A2CC8BF0003C760 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4F04C66B2A2CC8C00003C760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F04C6702A2CC8C00003C760 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F04C6702A2CC8C00003C760 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		4F04C6722A2CC8C00003C760 /* IOExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IOExplorer.entitlements; sourceTree = "<group>"; };
 		4F04C6792A2CC8F70003C760 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4F04C67B2A2CC8FB0003C760 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		4F04C70F2A2D83250003C760 /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
-		4F04C7102A2D83250003C760 /* MainSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
-		4F04C7152A2D86FD0003C760 /* SummariesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummariesViewController.h; sourceTree = "<group>"; };
-		4F04C7162A2D86FD0003C760 /* SummariesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummariesViewController.m; sourceTree = "<group>"; };
-		4F04C7182A2D87ED0003C760 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		4F04C7192A2D87ED0003C760 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		4F04C71B2A2D945F0003C760 /* SummaryNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummaryNode.h; sourceTree = "<group>"; };
-		4F04C71C2A2D945F0003C760 /* SummaryNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummaryNode.m; sourceTree = "<group>"; };
-		4F04C71F2A2D94780003C760 /* SummariesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummariesViewModel.h; sourceTree = "<group>"; };
-		4F04C7202A2D94780003C760 /* SummariesViewModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummariesViewModel.mm; sourceTree = "<group>"; };
-		4FD442332A2DD9B700B5443C /* SummaryTableCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummaryTableCellView.h; sourceTree = "<group>"; };
-		4FD442342A2DD9B700B5443C /* SummaryTableCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummaryTableCellView.m; sourceTree = "<group>"; };
+		4F04C70F2A2D83250003C760 /* MainSplitViewController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainSplitViewController.hpp; sourceTree = "<group>"; };
+		4F04C7102A2D83250003C760 /* MainSplitViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainSplitViewController.mm; sourceTree = "<group>"; };
+		4F04C7152A2D86FD0003C760 /* SummariesViewController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SummariesViewController.hpp; sourceTree = "<group>"; };
+		4F04C7162A2D86FD0003C760 /* SummariesViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummariesViewController.mm; sourceTree = "<group>"; };
+		4F04C7182A2D87ED0003C760 /* DetailViewController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DetailViewController.hpp; sourceTree = "<group>"; };
+		4F04C7192A2D87ED0003C760 /* DetailViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DetailViewController.mm; sourceTree = "<group>"; };
+		4FD442332A2DD9B700B5443C /* SummaryTableCellView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SummaryTableCellView.hpp; sourceTree = "<group>"; };
+		4FD442342A2DD9B700B5443C /* SummaryTableCellView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummaryTableCellView.mm; sourceTree = "<group>"; };
 		4FD442362A2DD9C100B5443C /* SummaryTableCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableCellView.xib; sourceTree = "<group>"; };
-		4FD442392A2DE2A700B5443C /* SummaryNodeFactory.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummaryNodeFactory.mm; sourceTree = "<group>"; };
-		4FD4423A2A2DE2A700B5443C /* SummaryNodeFactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SummaryNodeFactory.hpp; sourceTree = "<group>"; };
+		4FD4423D2A2DE90700B5443C /* IOKitWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IOKitWrapper.cpp; sourceTree = "<group>"; };
+		4FD4423E2A2DE90700B5443C /* IOKitWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IOKitWrapper.hpp; sourceTree = "<group>"; };
+		4FD442402A2E21B300B5443C /* SummaryNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SummaryNode.cpp; sourceTree = "<group>"; };
+		4FD442412A2E21B300B5443C /* SummaryNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SummaryNode.hpp; sourceTree = "<group>"; };
+		4FD442432A2E259200B5443C /* SummaryNodeObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SummaryNodeObject.hpp; sourceTree = "<group>"; };
+		4FD442442A2E259200B5443C /* SummaryNodeObject.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummaryNodeObject.mm; sourceTree = "<group>"; };
+		4FD442482A2E2E6400B5443C /* SummariesViewModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SummariesViewModel.hpp; sourceTree = "<group>"; };
+		4FD442492A2E2E6400B5443C /* SummariesViewModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SummariesViewModel.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD442462A2E262100B5443C /* IOKit.framework in Frameworks */,
+				4FD442472A2E262500B5443C /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,13 +84,14 @@
 		4F04C6672A2CC8BF0003C760 /* IOExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				4F04C6682A2CC8BF0003C760 /* AppDelegate.h */,
-				4F04C6692A2CC8BF0003C760 /* AppDelegate.m */,
+				4F04C6682A2CC8BF0003C760 /* AppDelegate.hpp */,
+				4F04C6692A2CC8BF0003C760 /* AppDelegate.mm */,
 				4F04C66B2A2CC8C00003C760 /* Assets.xcassets */,
-				4F04C6702A2CC8C00003C760 /* main.m */,
+				4F04C6702A2CC8C00003C760 /* main.mm */,
 				4F04C6722A2CC8C00003C760 /* IOExplorer.entitlements */,
-				4F04C70F2A2D83250003C760 /* MainSplitViewController.h */,
-				4F04C7102A2D83250003C760 /* MainSplitViewController.m */,
+				4F04C70F2A2D83250003C760 /* MainSplitViewController.hpp */,
+				4F04C7102A2D83250003C760 /* MainSplitViewController.mm */,
+				4FD4423C2A2DE8E800B5443C /* Utils */,
 				4F04C71E2A2D94620003C760 /* Summaries */,
 				4FD442382A2DE0A200B5443C /* Detail */,
 			);
@@ -102,16 +110,16 @@
 		4F04C71E2A2D94620003C760 /* Summaries */ = {
 			isa = PBXGroup;
 			children = (
-				4F04C7152A2D86FD0003C760 /* SummariesViewController.h */,
-				4F04C7162A2D86FD0003C760 /* SummariesViewController.m */,
-				4F04C71F2A2D94780003C760 /* SummariesViewModel.h */,
-				4F04C7202A2D94780003C760 /* SummariesViewModel.mm */,
-				4FD4423A2A2DE2A700B5443C /* SummaryNodeFactory.hpp */,
-				4FD442392A2DE2A700B5443C /* SummaryNodeFactory.mm */,
-				4F04C71B2A2D945F0003C760 /* SummaryNode.h */,
-				4F04C71C2A2D945F0003C760 /* SummaryNode.m */,
-				4FD442332A2DD9B700B5443C /* SummaryTableCellView.h */,
-				4FD442342A2DD9B700B5443C /* SummaryTableCellView.m */,
+				4F04C7152A2D86FD0003C760 /* SummariesViewController.hpp */,
+				4F04C7162A2D86FD0003C760 /* SummariesViewController.mm */,
+				4FD442482A2E2E6400B5443C /* SummariesViewModel.hpp */,
+				4FD442492A2E2E6400B5443C /* SummariesViewModel.mm */,
+				4FD442412A2E21B300B5443C /* SummaryNode.hpp */,
+				4FD442402A2E21B300B5443C /* SummaryNode.cpp */,
+				4FD442432A2E259200B5443C /* SummaryNodeObject.hpp */,
+				4FD442442A2E259200B5443C /* SummaryNodeObject.mm */,
+				4FD442332A2DD9B700B5443C /* SummaryTableCellView.hpp */,
+				4FD442342A2DD9B700B5443C /* SummaryTableCellView.mm */,
 				4FD442362A2DD9C100B5443C /* SummaryTableCellView.xib */,
 			);
 			path = Summaries;
@@ -120,10 +128,19 @@
 		4FD442382A2DE0A200B5443C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				4F04C7182A2D87ED0003C760 /* DetailViewController.h */,
-				4F04C7192A2D87ED0003C760 /* DetailViewController.m */,
+				4F04C7182A2D87ED0003C760 /* DetailViewController.hpp */,
+				4F04C7192A2D87ED0003C760 /* DetailViewController.mm */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		4FD4423C2A2DE8E800B5443C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FD4423E2A2DE90700B5443C /* IOKitWrapper.hpp */,
+				4FD4423D2A2DE90700B5443C /* IOKitWrapper.cpp */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,15 +212,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F04C6712A2CC8C00003C760 /* main.m in Sources */,
-				4FD4423B2A2DE2A700B5443C /* SummaryNodeFactory.mm in Sources */,
-				4FD442352A2DD9B700B5443C /* SummaryTableCellView.m in Sources */,
-				4F04C7212A2D94780003C760 /* SummariesViewModel.mm in Sources */,
-				4F04C7172A2D86FD0003C760 /* SummariesViewController.m in Sources */,
-				4F04C7112A2D83250003C760 /* MainSplitViewController.m in Sources */,
-				4F04C71D2A2D945F0003C760 /* SummaryNode.m in Sources */,
-				4F04C66A2A2CC8BF0003C760 /* AppDelegate.m in Sources */,
-				4F04C71A2A2D87ED0003C760 /* DetailViewController.m in Sources */,
+				4F04C6712A2CC8C00003C760 /* main.mm in Sources */,
+				4FD4423F2A2DE90700B5443C /* IOKitWrapper.cpp in Sources */,
+				4FD442352A2DD9B700B5443C /* SummaryTableCellView.mm in Sources */,
+				4FD442452A2E259200B5443C /* SummaryNodeObject.mm in Sources */,
+				4FD442422A2E21B300B5443C /* SummaryNode.cpp in Sources */,
+				4F04C7172A2D86FD0003C760 /* SummariesViewController.mm in Sources */,
+				4F04C7112A2D83250003C760 /* MainSplitViewController.mm in Sources */,
+				4F04C66A2A2CC8BF0003C760 /* AppDelegate.mm in Sources */,
+				4F04C71A2A2D87ED0003C760 /* DetailViewController.mm in Sources */,
+				4FD4424A2A2E2E6400B5443C /* SummariesViewModel.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

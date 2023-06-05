@@ -1,21 +1,22 @@
 //
-//  SummariesViewController.m
+//  SummariesViewController.mm
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/5/23.
 //
 
-#import "SummariesViewController.h"
-#import "SummariesViewModel.h"
-#import "SummaryNode.h"
-#import "SummaryTableCellView.h"
+#import "SummariesViewController.hpp"
+#import "SummariesViewModel.hpp"
+#import "SummaryNodeObject.hpp"
+#import "SummaryTableCellView.hpp"
+#import <memory>
 
 #define kSummariesViewControllerTableColumnIdentifier @""
 
 @interface SummariesViewController () <NSOutlineViewDelegate, NSOutlineViewDataSource>
 @property (retain) NSScrollView *scrollView;
 @property (retain) NSOutlineView *outlineView;
-@property (retain) SummariesViewModel *viewModel;
+@property (assign) std::shared_ptr<SummariesViewModel> viewModel;
 @property NSArray *content;
 @end
 
@@ -24,7 +25,6 @@
 - (void)dealloc {
     [_scrollView release];
     [_outlineView release];
-    [_viewModel release];
     [super dealloc];
 }
 
@@ -39,9 +39,7 @@
     [self setupScrollView];
     [self setupOutlineView];
     [self setupViewModel];
-    [self.viewModel loadDataSourceWithCompletionHandler:^{
-        
-    }];
+    self.viewModel.get()->loadDataSource();
 }
 
 - (void)setupScrollView {
@@ -75,8 +73,8 @@
 }
 
 - (void)setupViewModel {
-    SummariesViewModel *viewModel = [SummariesViewModel new];
-    NSTreeController *treeController = viewModel.treeController;
+    std::shared_ptr<SummariesViewModel> viewModel = std::make_shared<SummariesViewModel>();
+    NSTreeController *treeController = viewModel.get()->treeController();
     
     [self.outlineView bind:NSContentBinding toObject:treeController withKeyPath:@"arrangedObjects" options:nil];
     [self.outlineView bind:NSSelectionIndexPathsBinding toObject:treeController withKeyPath:NSSelectionIndexPathsBinding options:nil];
@@ -85,7 +83,6 @@
     self.outlineView.dataSource = self;
     
     self.viewModel = viewModel;
-    [viewModel release];
 }
 
 #pragma mark - NSOutlineViewDelegate
@@ -93,7 +90,7 @@
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
     SummaryTableCellView *view = [outlineView makeViewWithIdentifier:@"SummaryTableCellView" owner:nil];
     NSTreeNode *treeNode = (NSTreeNode *)item;
-    SummaryNode *representedObject = [treeNode representedObject];
+    SummaryNodeObject *representedObject = [treeNode representedObject];
     
     view.imageView.image = [NSImage imageWithSystemSymbolName:representedObject.systemImageName accessibilityDescription:nil];
     view.textField.stringValue = representedObject.title;
@@ -106,7 +103,7 @@
 - (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item {
     // NSTreeControllerTreeNode
     NSTreeNode *treeNode = (NSTreeNode *)item;
-    SummaryNode *representedObject = [treeNode representedObject];
+    SummaryNodeObject *representedObject = [treeNode representedObject];
     return representedObject;
 }
 

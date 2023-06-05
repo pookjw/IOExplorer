@@ -1,66 +1,77 @@
 //
-//  SummariesViewModel.m
+//  SummariesViewModel.mm
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/5/23.
 //
 
-#import "SummariesViewModel.h"
-#import "SummaryNodeFactory.hpp"
+#import "SummariesViewModel.hpp"
+#import "IOKitWrapper.hpp"
+#import <ranges>
 
-@interface SummariesViewModel ()
-@property (retain) NSTreeController *treeController;
-@property (retain) NSOperationQueue *queue;
-@end
-
-@implementation SummariesViewModel
-
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setupTreeController];
-        [self setupQueue];
-    }
-    
-    return self;
+SummariesViewModel::SummariesViewModel() {
+    setupTreeController();
+    setupQueue();
 }
 
-- (void)dealloc {
+SummariesViewModel::~SummariesViewModel() {
     [_treeController release];
     [_queue cancelAllOperations];
     [_queue release];
-    [super dealloc];
 }
 
-- (void)loadDataSourceWithCompletionHandler:(void (^)(void))completionHandler {
-    NSTreeController *treeController = self.treeController;
+NSTreeController *SummariesViewModel::treeController() {
+    return [[_treeController retain] autorelease];
+}
+
+void SummariesViewModel::loadDataSource() {
+    NSTreeController *treeController = _treeController;
     
-    [self.queue addOperationWithBlock:^{
-        SummaryNode *usbNode = SummaryNodeFactory::usbNode();
+    [_queue addOperationWithBlock:^{
+        SummaryNodeObject *usbNodeObject = SummariesViewModel::usbNodeObject();
+        
         NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:0];
         [NSOperationQueue.mainQueue addOperationWithBlock:^{
-            [treeController insertObject:usbNode atArrangedObjectIndexPath:indexPath];
+            [treeController insertObject:usbNodeObject atArrangedObjectIndexPath:indexPath];
         }];
-
-        completionHandler();
     }];
 }
 
-- (void)setupTreeController {
+void SummariesViewModel::setupTreeController() {
     NSTreeController *treeController = [NSTreeController new];
-    treeController.objectClass = SummaryNode.class;
+    treeController.objectClass = SummaryNodeObject.class;
     treeController.childrenKeyPath = @"children";
     treeController.countKeyPath = @"count";
     treeController.leafKeyPath = @"isLeaf";
     
-    self.treeController = treeController;
+    _treeController = [treeController retain];
     [treeController release];
 }
 
-- (void)setupQueue {
+void SummariesViewModel::setupQueue() {
     NSOperationQueue *queue = [NSOperationQueue new];
     queue.qualityOfService = NSQualityOfServiceBackground;
-    self.queue = queue;
+    _queue = [queue retain];
     [queue release];
 }
 
-@end
+SummaryNodeObject *SummariesViewModel::usbNodeObject() {
+    auto children = IOKitWrapper::usb::allObjects() |
+    std::views::transform([](io_object_t ioObject) {
+        auto productString = IOKitWrapper::usb::productString(ioObject).value_or("(null)");
+        std::shared_ptr<SummaryNode> summaryNode = std::make_shared<SummaryNode>(ioObject, productString, std::vector<std::shared_ptr<SummaryNode>>());
+        IOObjectRelease(ioObject);
+        return summaryNode;
+    });
+    
+    std::vector<std::shared_ptr<SummaryNode>> sortedChildren(children.begin(), children.end());
+    
+    std::ranges::sort(sortedChildren, [](auto lhs, auto rhs) {
+        return lhs.get()->title() < rhs.get()->title();
+    });
+    
+    std::shared_ptr<SummaryNode> summaryNodeRef = std::make_shared<SummaryNode>(IO_OBJECT_NULL, "USB", sortedChildren);
+    SummaryNodeObject *result = [[SummaryNodeObject alloc] initWithsummaryNodeRef:summaryNodeRef];
+    
+    return [result autorelease];
+}

@@ -1,13 +1,13 @@
 //
-//  MainSplitViewController.m
+//  MainSplitViewController.mm
 //  IOExplorer
 //
 //  Created by Jinwoo Kim on 6/5/23.
 //
 
-#import "MainSplitViewController.h"
-#import "SummariesViewController.h"
-#import "DetailViewController.h"
+#import "MainSplitViewController.hpp"
+#import "SummariesViewController.hpp"
+#import "DetailViewController.hpp"
 
 @interface MainSplitViewController ()
 @property (retain) SummariesViewController *summariesViewController;
