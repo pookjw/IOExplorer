@@ -42,7 +42,7 @@
 }
 
 - (void)setupScrollView {
-    NSScrollView *scrollView = [NSScrollView new];
+    NSScrollView *scrollView = [[NSScrollView alloc] initWithFrame:self.view.bounds];
     scrollView.drawsBackground = NO;
     scrollView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     
