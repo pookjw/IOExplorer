@@ -59,7 +59,7 @@ SummaryNodeObject *SummariesViewModel::usbNodeObject() {
     auto children = IOKitWrapper::usb::allObjects() |
     std::views::transform([](io_object_t ioObject) {
         auto productString = IOKitWrapper::usb::productString(ioObject).value_or("(null)");
-        std::shared_ptr<SummaryNode> summaryNode = std::make_shared<SummaryNode>(ioObject, productString, std::vector<std::shared_ptr<SummaryNode>>());
+        std::shared_ptr<SummaryNode> summaryNode = std::make_shared<SummaryNode>(ioObject, productString, std::vector<std::shared_ptr<SummaryNode>>(), SummaryNode::NodeType::USBType);
         IOObjectRelease(ioObject);
         return summaryNode;
     });
@@ -70,7 +70,7 @@ SummaryNodeObject *SummariesViewModel::usbNodeObject() {
         return lhs.get()->title() < rhs.get()->title();
     });
     
-    std::shared_ptr<SummaryNode> summaryNodeRef = std::make_shared<SummaryNode>(IO_OBJECT_NULL, "USB", sortedChildren);
+    std::shared_ptr<SummaryNode> summaryNodeRef = std::make_shared<SummaryNode>(IO_OBJECT_NULL, "USB", sortedChildren, SummaryNode::NodeType::USBRootType);
     SummaryNodeObject *result = [[SummaryNodeObject alloc] initWithsummaryNodeRef:summaryNodeRef];
     
     return [result autorelease];

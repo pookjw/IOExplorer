@@ -7,7 +7,7 @@
 
 #import "SummaryNode.hpp"
 
-SummaryNode::SummaryNode(io_object_t ioObject, std::string title, std::vector<std::shared_ptr<SummaryNode>> children) : _ioObject(ioObject), _title(title), _children(children) {
+SummaryNode::SummaryNode(io_object_t ioObject, std::string title, std::vector<std::shared_ptr<SummaryNode>> children, SummaryNode::NodeType nodeType) : _ioObject(ioObject), _title(title), _children(children), _nodeType(nodeType) {
     IOObjectRetain(ioObject);
 }
 
@@ -24,7 +24,14 @@ std::string SummaryNode::title() {
 }
 
 std::string SummaryNode::systemImageName() {
-    return "heart";
+    switch (_nodeType) {
+        case SummaryNode::NodeType::USBRootType:
+            return "heart.fill";
+        case SummaryNode::NodeType::USBType:
+            return "heart";
+        default:
+            return "questionmark";
+    }
 }
 
 std::vector<std::shared_ptr<SummaryNode>> SummaryNode::children() {
@@ -35,7 +42,11 @@ bool SummaryNode::isLeaf() {
     return _children.empty();
 }
 
-SummaryNode::SummaryNode(const SummaryNode& other) : _ioObject(other._ioObject), _title(other._title), _children(other._children) {
+SummaryNode::NodeType SummaryNode::nodeType() {
+    return _nodeType;
+}
+
+SummaryNode::SummaryNode(const SummaryNode& other) : _ioObject(other._ioObject), _title(other._title), _children(other._children), _nodeType(other._nodeType) {
     IOObjectRetain(_ioObject);
 }
 
@@ -44,6 +55,7 @@ SummaryNode& SummaryNode::operator=(const SummaryNode &other) {
         _ioObject = other._ioObject;
         _title = other._title;
         _children = other._children;
+        _nodeType = other._nodeType;
         IOObjectRetain(_ioObject);
     }
     
